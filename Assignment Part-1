@@ -530,6 +530,20 @@ else:
 
 Q80. Write a Python program to check Armstrong Number.
 
+```
+l = [1,2,153,370,371,372]
+
+for i in l:
+    temp = i
+    tsum = 0
+    while temp>0:
+        tmp = temp%10
+        tsum= tsum + (tmp ** 3)
+        temp//=10
+    if  tsum ==i:
+        print(i,end=" ")
+```
+
 Q81. Write a Python program to find the n-th Fibonacci Number.
 
 ```
@@ -552,6 +566,12 @@ print(lst)
 
 Q83. Write a Python program to swap two elements in a list.
 
+```
+l = [1,2,153,370,371,372]
+l[0],l[1] = l[1],l[0]
+print(l)
+```
+    
 Q84. Write a Python program to find N largest element from a list.
 
 ```
@@ -565,15 +585,57 @@ Q85. Write a Python program to find cumulative sum of a list.
 
 Q86. Write a Python program to check if a string is palindrome or not.
 
+```
+l = "11211"
+n=0
+for i in range(len(l)//2+1):
+    if l[i] == l[-i-1]:
+        continue
+    else:
+        n = -1
+if n==0:
+    print("Palindrome")
+else:
+    print("No palindrome")
+```
+
 Q87. Write a Python program to remove i'th element from a string.
+
+
 
 Q88. Write a Python program to check if a substring is present in a given string.
 
+```
+l = "11211"
+substr = '12'
+
+if substr in l:
+    print("subsring is present")
+```
+
 Q89. Write a Python program to find words which are greater than given length k.
+
+```
+string = "this is a game"
+lst = string.split(" ")
+k = 3
+count = 0
+for i in lst:
+    if len(i)>k:
+        count+=1
+print(count)
+```
 
 Q90. Write a Python program to extract unquire dictionary values.
 
 Q91. Write a Python program to merge two dictionary.
+
+```
+dict1 = {'a': 10, 'b': 8}
+dict2 = {'d': 6, 'c': 4}
+dict2.update(dict1)
+print(dict2)
+```
 
 Q92. Write a Python program to convert a list of tuples into dictionary.
 ```
@@ -605,6 +667,21 @@ Q94. Write a Python program to get all combinations of 2 tuples.
 Input : test_tuple1 = (7, 2), test_tuple2 = (7, 8)
 Output : [(7, 7), (7, 8), (2, 7), (2, 8), (7, 7), (7, 2), (8, 7), (8, 2)]
 ```
+```
+test_tuple1 = (7, 2)
+test_tuple2 = (7, 8)
+lst = []
+for i in test_tuple1:
+    for j in test_tuple2:
+        l = [i,j]
+        lst.append(tuple(l))
+for i in test_tuple2:
+    for j in test_tuple1:
+        l = [i,j]
+        lst.append(tuple(l))
+print(lst)
+```
+
 
 Q95. Write a Python program to sort a list of tuples by second item.
 ```
@@ -620,6 +697,13 @@ Q96. Write a python program to print below pattern.
 * * * * 
 * * * * * 
 ```
+
+```
+n = 5
+for i in range(1,n):
+    print('* '*i)
+```
+
 Q97. Write a python program to print below pattern.
 ```
     *
@@ -627,6 +711,13 @@ Q97. Write a python program to print below pattern.
   ***
  ****
 *****
+```
+
+```
+n = 5
+for i in range(1,n):
+    print(" "*(n-i-1),end="")
+    print("*"*i)
 ```
 
 Q98. Write a python program to print below pattern.
@@ -638,6 +729,13 @@ Q98. Write a python program to print below pattern.
 * * * * * 
 ```
 
+```
+n = 5
+for i in range(1,n):
+    print(" "*(n-i-1),end="")
+    print(" *"*i)
+```
+
 Q99. Write a python program to print below pattern.
 ```
 1 
@@ -647,6 +745,14 @@ Q99. Write a python program to print below pattern.
 1 2 3 4 5
 ```
 
+```
+n = 5
+for i in range(1,n+1):
+    for run in range(1,i):
+        print("{} ".format(run),end="")
+    print()
+```
+
 Q100. Write a python program to print below pattern.
 ```
 A 
@@ -654,4 +760,12 @@ B B
 C C C 
 D D D D 
 E E E E E 
+```
+
+```
+n = 5
+for i in range(ord('A'),ord('A')+n):
+    for run in range(ord('A'),i):
+        print("{} ".format(chr(run)),end="")
+    print()
 ```
